@@ -1,4 +1,4 @@
-from warranty.decorators import authorize
+from contactbook.decorators import authorize
 from .models import *
 from django.utils import timezone
 from rest_framework.status import *

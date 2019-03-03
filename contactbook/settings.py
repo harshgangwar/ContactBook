@@ -73,6 +73,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'contactbook.wsgi.application'
 
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'contactbook.middlewares.MyAuthenticationClass',  # Customized middleware
+    ),
+
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
+    # 'DEFAULT_PERMISSION_CLASSES': [],
+
+    'TEST_REQUEST_RENDERER_CLASSES': (
+        'rest_framework.renderers.MultiPartRenderer',
+        'rest_framework.renderers.JSONRenderer'
+    )
+}
+
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
